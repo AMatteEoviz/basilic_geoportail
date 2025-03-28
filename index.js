@@ -18,7 +18,7 @@ const pool = new Pool({
     password: "postgres",
     port: 5432
 });
-console.log("Connexion réussie à la base de donnée ")
+console.log("Connexion réussie à la base de donnée ");
 
 
 
@@ -48,7 +48,7 @@ function isAuthenticated(req, res, next) {
       return res.redirect("/login");
   }
   next();
-}
+};
 
 
 // Démarrage du serveur
@@ -64,7 +64,6 @@ app.get("/", (req, res) => {
 });
 
 
-
 // MAP (P_3)
 
 app.get("/map", (req, res) => {
@@ -74,13 +73,13 @@ app.get("/map", (req, res) => {
 app.get("/map/api/basilic_final_insee_reg", async (req, res) => {
     const sql = "SELECT DISTINCT(insee_reg) FROM monat.basilic_final";
     const result = await pool.query(sql);
-    res.json({features: result.rows})
+    res.json({features: result.rows});
 });
 
 app.get("/map/api/basilic_final_type_equipement_ou_lieu", async (req, res) => {
   const sql = "SELECT DISTINCT(type_equipement_ou_lieu) FROM monat.basilic_final";
   const result = await pool.query(sql);
-  res.json({features: result.rows})
+  res.json({features: result.rows});
 });
 
 app.get("/image/:id", async (req, res) => {
