@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="shortcut icon" href="/img/logo.png" />
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <title>Basilic - Géoportail</title>
+</head>
+<body>
+    <div id="headApp">
+        <header>
+            <nav id="navigation_page">
+                <ul>
+                    <li><a href="/">HomePage</a></li>
+                    <li><a href="/map">Carte</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/db">Base de données</a></li>
+                </ul>
+                <span v-if="user">
+                    <strong>{{ user.username }}</strong>
+                    <button @click="logout" id="deco">Déconnexion</button>
+                </span>
+                <a v-else href="/login" id="connexion">Connexion</a>
+            </nav>
+        </header>
+    </div>
+
+<script src="/js/header.js"></script>
+    

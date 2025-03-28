@@ -1,0 +1,67 @@
+<%- include("_header") -%>
+
+<link rel="stylesheet" href="/css/styleEdit.css">
+
+<h1>Modifier une fiche</h1>
+
+<form action="/edit/<%= model.monument_id %>" method="post" enctype="multipart/form-data">
+
+  <div>
+    <label for="Nom">Nom</label>
+    <input autofocus name="Nom" value="<%= model.nom %>" />
+  </div>
+  
+  <div>
+    <label for="Adresse">Adresse</label>
+    <input name="Adresse" value="<%= model.adresse %>" />
+  </div>
+
+  <div>
+    <label for="Complement">Complément d'adresse</label>
+    <input name="Complement" value="<%= model.complement_adresse %>" />
+  </div>
+
+  <div>
+    <label for="Commune">Commune</label>
+    <input name="Commune" value="<%= model.libelle_geographique %>" />
+  </div>
+
+  <div>
+    <label for="Codepostal">Code postal</label>
+    <input name="Codepostal" value="<%= model.code_postal %>" />
+  </div>
+
+
+  <div>
+    <label for="TypeEquipement">Type d'équipement</label>
+    <select name="TypeEquipement" id="TypeEquipement">
+        <option value="<%= model.type_equipement_ou_lieu %>">-- Ne rien changer --</option>
+    </select>
+  </div>
+
+
+  <!-- ajouter une image -->
+
+  <div>
+    <label>Image
+      <input type="file" name="image"id="image" accept="image/*" />
+    </label>
+  </div>
+
+  <div>
+    <label>Description
+    <textarea name="description" id="description"></textarea>
+    </label>
+  </div>
+
+
+  <div>
+    <input type="submit" value="Modifier">
+    <a href="/db">Annuler</a>
+  </div>
+
+</form>
+
+<script src="/js/edit.js"></script>
+
+<%- include("_footer") -%>

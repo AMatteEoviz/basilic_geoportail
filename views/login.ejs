@@ -1,0 +1,39 @@
+<%- include("_header") -%>
+
+<link rel="stylesheet" href="/css/styleLogin.css">
+
+
+<div id ="app">
+
+    <form v-if="!inscription" @submit.prevent="connecterUtilisateur" id="login">
+        <input type="text" placeholder="Nom d'utilisateur" v-model="username">
+        <input type="password" placeholder="Mot de passe" v-model="password">
+        <p v-if="message" :style="{ color: erreur ? 'red' : 'green' }">{{ message }}</p>
+
+        <button type="submit">Se connecter</button>
+        <button type="button" @click="montrerInscription">Pas encore inscrit ?</button>
+
+    </form>
+
+    <form v-if="inscription" @submit.prevent="inscrireUtilisateur" id="register">
+        <label for="username">Saisir un nom d'utilisateur</label>
+        <input name="username" type="text" v-model="username" placeholder="username" required>
+    
+        <label for="premier_mdp">Saisir un mot de passe</label>
+        <input name="premier_mdp" type="password" v-model="premier_mdp" required>
+    
+        <label for="deuxieme_mdp">Confirmer mot de passe</label>
+        <input name="deuxieme_mdp" type="password" v-model="deuxieme_mdp" required>
+    
+        <button type="submit">Créer compte</button>
+        <button type="button" @click="fermerInscription">x</button>
+    
+        <p v-if="message" :style="{ color: erreur ? 'red' : 'green' }">{{ message }}</p>
+    </form>
+    
+</div>
+
+
+<script src="/js/login.js"></script>
+
+<%- include("_footer") -%>

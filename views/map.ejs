@@ -1,0 +1,81 @@
+<%- include("_header") -%>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/> 
+<!-- Chargement leaflet css -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<!-- Chargement librairie leaflet -->
+ <link rel="stylesheet" href="/css/styleMap.css">
+
+ <div id="app">
+    <div id="main">
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" @click="closeSidebar()">&times;</a>
+            <label>Requête avancée</label>
+            <form>
+                <div id="selecteurAvance">
+                    <div v-for="(ligne, index) in lignes" :key="index" class="ligneSelecteur">
+                        <select v-model="ligne.selectedFiltre" @change="trouverFiltre(ligne)">
+                            <option v-for="(valeur, nom) in listeFiltre" :key="nom" :value="valeur">
+                                {{ nom }}
+                            </option>                    
+                        </select>
+                        <select v-if="Object.values(listeFiltre_liste).includes(ligne.selectedFiltre)" v-model="ligne.selectedValeur">
+                            <option v-for="nom in ligne.filtre" :value="nom">{{ nom }}</option>
+                        </select>
+                        <input v-if="Object.values(listeFiltre_input).includes(ligne.selectedFiltre)" type="text" id="Filtre" v-model="ligne.selectedValeur" placeholder="Sélectionner une valeur">
+                        <select v-if="index > 0" v-model="ligne.operateur">
+                            <option value="AND">AND</option>
+                            <option value="OR">OR</option>
+                        </select>
+                        <button @click="ajouterLigne(index, $event)">+</button>
+                        <button @click="retirerLigne(index, $event)">-</button>
+                    </div>
+                    <p v-if="erreurCQL">Erreur, argument manquant</p>
+                </div>
+                <button @click="ajouterCouche($event)">Ok</button>
+            </form>
+            <button @click="nettoyerCarte()" style="margin-top: 5px">Nettoyer Carte</button>
+
+            <a id="ICHILEGOAT" href="https://ichi.pro/fr/creer-une-barre-laterale-animee-a-l-aide-de-html-css-et-javascript-129237452368346">Slide bar by &copy;2025 ICHI PRO</a>
+        </div>
+
+        <div id="mapContainer">
+            <div id="mapToolBox" v-if="filtreBaseEstSelectionne">
+                <div id="selecteurBase">
+                    <form>
+                        <label>Saisir votre recherche</label>
+                        <div id="optionsSelection">
+                            <div class="ligneSelecteur">
+                                <select v-model="lignes[0].selectedFiltre" @change="trouverFiltre(ligne)">
+                                    <option value="insee_reg">Région</option>
+                                    <option value="insee_dep">Département</option>
+                                    <option value="code_postal">Code postal</option>
+                                </select>
+                                <select v-if="Object.values(listeFiltre_liste).includes(lignes[0].selectedFiltre)" v-model="lignes[0].selectedValeur">
+                                    <option v-for="nom in lignes[0].filtre" :value="nom">{{ nom }}</option>
+                                </select>
+                                <input v-if="Object.values(listeFiltre_input).includes(lignes[0].selectedFiltre)" type="text" id="Filtre" v-model="lignes[0].selectedValeur" placeholder="Sélectionner une valeur">
+                            </div>
+                        </div>
+                        <button @click="ajouterCouche($event)">Ok</button>
+                        <p v-if="erreurCQL">Erreur, argument manquant</p>
+                    </form>
+                </div>
+                <button @click="nettoyerCarte()">Nettoyer Carte</button>
+                <button class="openbtn" @click="openSidebar()">&#9776; Requête avancée</button>
+            </div>
+            <div id="map"></div>
+            <div id="FicheIdentite" v-model="ficheIdentite">
+                <h2 id="FicheIdentite_nom" v-if = "ficheIdentite.nom">{{ ficheIdentite.nom }}</h2>
+                <p>{{ ficheIdentite.type }}</p>
+                <img v-if="ficheIdentite.image" :src="ficheIdentite.image" :style="{ maxHeight: '250px', maxWidth: '200px' }"/>
+                <p v-if="ficheIdentite.departement">{{ ficheIdentite.ville }} ({{ ficheIdentite.departement }})</p>
+                <p v-if="ficheIdentite.adresse">{{ ficheIdentite.adresse }}, {{ ficheIdentite.code_postal }}</p>
+                <p v-if="ficheIdentite.description">{{ ficheIdentite.description }}</p>
+            </div>
+        </div> <!-- Fermeture mapContainer -->
+    </div> <!-- Fermeture main -->
+</div> <!-- Fermeture app -->
+
+
+<script src = "/js/map.js"></script>
+<%- include("_footer") -%>

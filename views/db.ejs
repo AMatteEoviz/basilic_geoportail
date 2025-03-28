@@ -1,0 +1,20 @@
+<%- include("_header") -%>
+
+<link rel="stylesheet" href="/css/styleDB.css">
+
+<h1>Base de donnée</h1>
+
+
+
+<input type="text" id="searchInput" placeholder="Rechercher un monument..." class="form-control">
+
+<button class="btn btn-primary" onclick="window.location.href='/create'">Ajouter un monument</button>
+
+
+<!-- Zone d'affichage des résultats -->
+ <div id ="results"></div>
+
+<script src="/js/db.js"></script>
+
+<%- include("_footer") -%>
+

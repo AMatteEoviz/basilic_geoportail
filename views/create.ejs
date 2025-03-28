@@ -1,0 +1,95 @@
+<%- include("_header") -%>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/> 
+<!-- Chargement leaflet css -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<!-- Chargement librairie leaflet -->
+ 
+<link rel="stylesheet" href="/css/styleCreate.css">
+
+<h1> Ajouter un monument</h1>
+
+<form action="/create" method="post" enctype="multipart/form-data">
+  <div class="form-horizontal">
+
+    <div>
+      <label for="Nom">Nom</label>
+      <input type="text" name="Nom" />
+  </div>
+    
+  <div>
+      <label for="Adresse">Adresse</label>
+      <input type="text" name="Adresse" />
+  </div>
+  
+ 
+  <div>
+    <label for="Complement">Complément d'adresse</label>
+    <input type="text" name="Complement" />
+  </div>
+
+
+  <div>
+    <label for="Commune">Commune</label>
+    <input type="text" name="Commune" />
+  </div>
+
+  <div>
+    <label for="Codepostal">Code Postal </label>
+    <input type="text" name="Codepostal" />
+  </div>
+  
+  <div>
+    <label for="TypeEquipement">Type d'équipement</label>
+    <select name="TypeEquipement" id="TypeEquipement">
+        <option value="">-- Sélectionner un type --</option>
+    </select>
+  </div>
+
+
+  <!-- carte -->
+    <div id = "map"></div>
+    
+    <div>
+      <label for="Latitude">Latitude</label>
+      <input type="text" id="Latitude" name="Latitude" readonly>
+  </div>
+
+  <div>
+    <label for="Longitude">Longitude</label>
+    <input type="text" id="Longitude" name="Longitude" readonly>
+</div>
+
+
+<div>
+  <label>Image
+    <input type="file" name="image"id="image" accept="image/*" />
+  </label>
+</div>
+
+<div>
+  <label>Description
+  <textarea name="description" id="description"></textarea>
+  </label>
+</div>
+
+
+
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2"></label>
+       <input type="submit" value="Ajouter" class="btn btn-default btn-success" />
+    </div>
+  </div>
+</form>
+
+<style>
+  #map{height: 300px;
+       width: 300px;
+       border-radius: 20px;
+  }
+</style>
+
+<script src="/js/create.js"></script>
+
+<%- include("_footer") -%>
+

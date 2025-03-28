@@ -1,0 +1,40 @@
+<%- include("_header") -%>
+
+<link rel="stylesheet" href="/css/styleBack.css">
+
+<div id="app">
+
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Commune</th>
+            <th>Code postal</th>
+            <th>Type d'équipement</th>
+            <th>Action</th>
+            <th>Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="monument in monuments" :key="monument.monument_id">
+            <td>{{ monument.monument_id }}</td>
+            <td>{{ monument.nom }}</td>
+            <td>{{ monument.adresse }}</td>
+            <td>{{ monument.libelle_geographique }}</td>
+            <td>{{ monument.code_postal }}</td>
+            <td>{{ monument.type_equipement_ou_lieu }}</td>
+            <td>{{ monument.wkb_geometry }}</td>
+            <td v-if="monument.image"><img :src="monument.image" :style="{ maxHeight: '200px', maxWidth: '180px' }" /></td>
+            <td v-if="monument.source=='ADD'"><button @click="validerAjout(monument.monument_id)" class="ADD">Valider Ajout</button></td>
+            <td v-if="monument.source=='EDI'"><button @click="validerModif(monument.monument_id)" class="EDI">Valider Modif</button></td>
+            <td><button @click="supprimerMonument(monument.monument_id)">Supprimer</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>      
+
+<script src = "/js/back.js"></script>
+
+<%- include("_footer") -%>
