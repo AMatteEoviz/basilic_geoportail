@@ -1,0 +1,125 @@
+body {
+    position: relative;
+    max-height: 650px;
+    padding: 0px;
+    padding-top: 79px;
+    margin: 0px;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 0px;
+    position: relative;
+}
+
+#zoneFiltre {
+    display: flex;
+    flex-direction: column;
+    width: 25%; /* Ajuste la largeur de la zone de filtre */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    gap: 20px;
+}
+
+.ligneSelecteur {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Augmente l'espacement entre les éléments */
+}
+
+select, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #959595;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:hover, select:focus,
+input[type="text"]:hover, input[type="text"]:focus {
+    border-color: #393939;
+    box-shadow: 0px 0px 8px rgba(31, 31, 31, 0.5);
+}
+
+#selecteurTemporel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="range"] {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #bebebe;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #393939;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#clotureSelecteur {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #393939;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #393939;
+    transform: scale(1.05);
+}
+
+#dashboard{
+    padding-top: 10px;
+    margin: 0px 0px 0px 60px;
+    display: flex;
+    flex-direction: row;
+    min-height: 550px;
+}
+
+#map {
+    width: 60%;
+}
+
+#chartZone {
+    padding: 12px;
+}
+

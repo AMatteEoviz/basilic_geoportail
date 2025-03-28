@@ -1,0 +1,87 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding-top: 59px; /* Espace pour un header si nécessaire */
+    max-height: 650px;
+    text-align: center;
+}
+
+/* Table Styles */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+table th {
+    background-color: #393939;
+    color: white;
+    font-size: 1.1rem;
+}
+
+table td {
+    background-color: #f9f9f9;
+    font-size: 1rem;
+}
+
+table tr:nth-child(even) td {
+    background-color: #f1f1f1;
+}
+
+/* Button Styles in Table */
+table td button {
+    background-color: #393939;
+    color: white;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+table td button.EDI {
+    background-color: #e1890e;
+}
+table td button.ADD {
+    background-color: rgb(72, 92, 79);
+}
+
+table td button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Header Styles */
+h1 {
+    color: #393939;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design for Table */
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+
+    table td button {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}

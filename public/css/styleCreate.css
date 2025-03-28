@@ -1,0 +1,76 @@
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+
+  .form-horizontal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-horizontal div {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+
+  input[type="file"] {
+    font-size: 1em;
+    margin: 10px 0;
+  }
+
+  .form-group {
+    margin-top: 20px;
+  }
+
+  .form-group input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #5cb85c;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .form-group input[type="submit"]:hover {
+    background-color: #4cae4c;
+  }
+
+  #map {
+    height: 300px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+
+  .form-group a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #999;
+  }
+
+  .form-group a:hover {
+    color: #555;
+  }

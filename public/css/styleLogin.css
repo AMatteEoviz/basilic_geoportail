@@ -1,0 +1,100 @@
+
+/* Style général des formulaires */
+form {
+    background-color: white;
+    padding: 30px;
+    margin: 0 auto;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Style pour les labels des champs de formulaire */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Style pour les champs de texte et les boutons */
+form input, form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin: 8px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style au focus des champs de texte */
+form input:focus, form button:focus {
+    border-color: #393939;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+/* Style pour les boutons */
+form button {
+    background-color: #393939;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Message d'erreur ou de succès */
+form p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #ff5c5c;
+}
+
+form p.green {
+    color: green;
+}
+
+/* Style pour le bouton de redirection vers l'inscription */
+form button[type="button"] {
+    background-color: #ddd;
+    color: #393939;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+form button[type="button"]:hover {
+    background-color: #bbb;
+}
+
+/* Bouton pour fermer l'inscription */
+form button[type="button"]:last-of-type {
+    background-color: #ff5c5c;
+    color: white;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+form button[type="button"]:last-of-type:hover {
+    background-color: #ff2a2a;
+}
+
+/* Style pour afficher les champs lorsque l'on est en mode inscription */
+form#register input {
+    margin-bottom: 10px;
+}
+
+/* Centrage du formulaire sur la page */
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding-top: 59px;
+    max-height: 650;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: white;
+    padding: 30px;
+    margin: 0 auto;
+    width: 60%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus, form select:focus {
+    border-color: #393939;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+form input[type="file"] {
+    padding: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+form input[type="submit"] {
+    background-color: #393939;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #393939;
+    transform: scale(1.05);
+}
+
+form a {
+    color: #393939;
+    font-size: 1rem;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+form a:hover {
+    color: #393939;
+}
+
+form div:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

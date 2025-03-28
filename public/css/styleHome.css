@@ -1,0 +1,82 @@
+
+
+#titre {
+        text-align: center; /* Centre le texte */
+        margin-top: 30px; /* Espace en haut */
+    }
+
+#titre h1 {
+        font-size: 45px; /* Taille du titre */
+        font-weight: bold; /* Met en gras */
+        color: #393939;
+        margin-bottom: 5px; /* Espace entre h1 et p */
+    }
+
+#titre h2 {
+        font-size: 20px; /* Taille du sous-titre */
+        color: #555; /
+    }
+
+
+#presentation {
+        padding: 0 130px; /* Ajoute de l'espace à gauche et à droite de la boîte du conteneur */
+        margin-bottom: 6px;
+        margin-top: 25px;
+    }
+    
+#presentation p {
+        text-indent: 40px; 
+        margin: 0; 
+        text-align: justify; 
+    }
+    
+
+body{
+    background-image: url(/img/basilic.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding-top: 59px;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: repeat(2, 500px); /* 3 colonnes de largeur égale */
+    grid-template-rows: repeat(3, 300px); /* 3 lignes de hauteur égale */
+    gap: 5px; /* Espacement entre les blocs */
+    width: max-content;
+    margin: auto;
+}
+
+.textBox{
+    max-width: 170px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.70);
+    padding: 16px;
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease-in-out;
+}
+
+.textBox:hover {
+    max-width: 500px; /* Augmente la largeur max */
+    white-space: normal; /* Permet le retour à la ligne */
+    overflow: visible; /* Affiche tout le texte */
+    background-color: white; /* Change de couleur pour indiquer l'agrandissement */
+    z-index: 10; /* S'assure que l'élément passe au-dessus des autres */
+    padding: 16px;
+}
+
+.textBox img {
+    display: block;
+    margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+
+.block1 { grid-column: 1; grid-row: 1; }
+.block2 { grid-column: 2; grid-row: 2; }
+.block3 { grid-column: 1; grid-row: 3; }

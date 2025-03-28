@@ -1,0 +1,164 @@
+
+
+#main {
+    display: flex;
+    flex-direction: row;
+    height: 100%; /* S'assure qu'il prend toute la hauteur de la fenêtre */
+    position: relative;
+}
+
+.sidebar {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; /* Prend toute la hauteur de #main */
+    width: 0px; /* Ajuste selon ton besoin */
+    background-color: #393939;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #959595;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.openbtn:hover {
+    background-color: #adadad;
+}
+
+/* Organisation en ligne pour afficher la carte à droite */
+#mapContainer {
+        transition: margin-left 0.5s;
+    padding: 20px;
+    display: flex;
+    flex-direction: row; /* Aligne les éléments horizontalement */
+    align-items: flex-start; /* Alignement en haut */
+    gap: 20px; /* Espacement entre le mapToolBox et la carte */
+    padding: 20px;
+}
+
+/* Ajustement du mapToolBox */
+#mapToolBox {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Largeur du panneau de recherche */
+}
+
+/* Ajustement de la carte */
+#map {
+    height: 550px;
+    width: 540px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#FicheIdentite{
+    max-width: 380px;
+}
+
+#FicheIdentite_nom{
+    background-color: #e1890e;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+
+/* Partie selecteur */
+
+/* Espacement entre les groupes de sélection */
+.ligneSelecteur {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Augmente l'espacement */
+    margin: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+}
+
+/* Amélioration des sélecteurs */
+select, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #959595;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:hover, select:focus,
+input[type="text"]:hover, input[type="text"]:focus {
+    border-color: #393939;
+    box-shadow: 0px 0px 8px rgba(31, 31, 31, 0.5);
+}
+
+/* Style des boutons */
+button {
+    background-color: #959595;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #adadad;
+    transform: scale(1.05);
+}
+
+#ICHILEGOAT {
+    margin-top: 320px;
+    color: white;
+    font-size: 1rem;
+}
